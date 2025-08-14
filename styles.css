@@ -1,56 +1,115 @@
-*{
-    padding: 0%;
-    margin: 0%;
+* {
+    padding: 0;
+    margin: 0;
     font-family: 'Press Start 2P', cursive, sans-serif;
+    box-sizing: border-box;
 }
 
-
-body{
+body {
     background-color: #000;
     color: #fff;
-    font-family: 'Press Start 2P', cursive;
 }
-.main-cont{
+
+.main-cont {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100%;
+    max-width: 70vmin;
+    margin: 0 auto;
+    padding: 10px;
 }
 
-.timer{
-    font-size: 15vmin;
+
+.timer {
+    font-size: clamp(24px, 10vmin, 80px);
     text-align: center;
     color: #00ff00;
-    text-shadow: 0 0 10px #00ff00;
+    text-shadow:
+        0 0 5px #00ff00,
+        0 0 15px #00ff00,
+        0 0 25px #00ff00;
 }
 
-
-
-.timer span{
+.timer span {
     display: inline-block;
     margin: 0 10px;
 }
 
 
 button {
-  color: #090909;
-  padding: 0.7em 1.7em;
-  font-size: 2.2vmin;
-  border-radius: 0.5em;
-  background: #e8e8e8;
-  cursor: pointer;
-  border: 1px solid #e8e8e8;
-  transition: all 0.3s;
+    color: #090909;
+    padding: clamp(8px, 1.5vmin, 14px) clamp(12px, 3vmin, 20px);
+    font-size: clamp(12px, 2vmin, 18px);
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    cursor: pointer;
+    border: 1px solid #e8e8e8;
+    transition: all 0.3s;
 }
 
 button:active {
-  color: #666;
-  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+    color: #666;
+    box-shadow: inset 4px 4px 12px #c5c5c5,
+                inset -4px -4px 12px #ffffff;
 }
-
 
 button:hover {
-  background: #d8d8d8;
-  border-color: #d8d8d8;
+    background: #d8d8d8;
+    border-color: #d8d8d8;
 }
 
+
+.controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #e0e0e0;
+    }
+    
+    .timer {
+        color: #76ff03;
+        text-shadow:
+            0 0 5px #76ff03,
+            0 0 15px #76ff03,
+            0 0 25px #76ff03;
+    }
+    
+    button {
+        background: #424242;
+        border: 1px solid #424242;
+        color: #e0e0e0;
+    }
+    
+    button:hover {
+        background: #616161;
+        border-color: #616161;
+    }
+    
+    button:active {
+        color: #bdbdbd;
+        box-shadow: inset 4px 4px 12px #9e9e9e,
+                    inset -4px -4px 12px #ffffff;
+    }
+}
+@media (max-width: 600px) {
+    .timer {
+        font-size: clamp(20px, 8vmin, 60px);
+    }
+    .controls {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    button {
+        width: 100%;
+        max-width: 200px;
+    }
+}

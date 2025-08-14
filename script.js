@@ -10,7 +10,7 @@ let stopWatch = () => {
     seconds++;
     if(seconds === 60){
         seconds = 0;
-        minute++;
+        minute++;   
         if(minute === 60){
             minute = 0;
             hour++;
