@@ -1,7 +1,7 @@
 *{
     padding: 0%;
     margin: 0%;
-     font-family: 'Press Start 2P', cursive;
+    font-family: 'Press Start 2P', cursive, sans-serif;
 }
 
 
@@ -14,7 +14,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vmin;
+    height: 100vh;
 }
 
 .timer{
@@ -49,12 +49,8 @@ button:active {
 }
 
 
-button:clicked {
-  background: #c8c8c8;
-  border-color: #c8c8c8;
-}
-
 button:hover {
   background: #d8d8d8;
   border-color: #d8d8d8;
 }
+
